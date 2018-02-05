@@ -4,7 +4,7 @@
  ![image](https://github.com/lucia-ly/test2/blob/master/pic/1.PNG)
 
 （2）注意在安装时勾选将anaconda加入环境变量，其他步骤就按照默认选项来就可以
- ![image](https://github.com/lucia-ly/test2/blob/master/pic/2.PNG)
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic/2.png)
 
 这样就安装好了
 
@@ -19,7 +19,7 @@ conda config --set show_channel_urls yes
 
 conda create -n tensorflow python=3.5
 
- ![image](https://github.com/lucia-ly/test2/blob/master/pic/3.PNG)
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic/3.png)
 
 activate tensorflow #打开环境
 deactivate tensorflow #关闭环境
@@ -39,6 +39,6 @@ sess = tf.Session()
 print(sess.run(hello))
 运行结果：
 
- ![image](https://github.com/lucia-ly/test2/blob/master/pic/5.PNG)
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic/5.png)
 
 安装成功！
