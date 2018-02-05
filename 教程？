@@ -1,8 +1,9 @@
 1.安装anaconda
 （1）下载anaconda 点击这里下载 系统是多少位的就下多少位的版本
-
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic/1.PNG)
 
 （2）注意在安装时勾选将anaconda加入环境变量，其他步骤就按照默认选项来就可以
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic/2.PNG)
 
 
 这样就安装好了
