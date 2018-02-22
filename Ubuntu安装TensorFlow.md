@@ -1,54 +1,64 @@
-# win10下用anaconda安装TensorFlow
-### 1.安装anaconda
-#### （1）下载anaconda,点击[这里](https://www.anaconda.com/download/#windows)下载,系统是多少位的就下多少位的版本
- ![image](https://github.com/lucia-ly/test2/blob/master/pic/1.PNG)
+# Ubuntu 16.04 安装 TensorFlow
+### 1.查看python版本
+#### 打开终端，输入指令
+```
+python
+```
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic1/1.PNG)
 
-#### （2）注意在安装时勾选将anaconda加入环境变量，其他步骤就按照默认选项来就可以
- ![image](https://github.com/lucia-ly/test2/blob/master/pic/2.png)
+#### 可以看到，默认安装的python版本是2.7
 
-这样就安装好了
+### 2.安装pip和依赖包
 
-### 2.安装tensorflow
-
-#### （1）打开Anaconda Prompt，输入清华仓库镜像，这样更新会快一些：(这一步不做也是可以的)
+#### （1）输入指令
 
 ```
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ 
-conda config --set show_channel_urls yes
+sudo apt-get install python-pip python-dev 
 ```
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic1/2.PNG)
+#### （2）root模式会让输入密码，密码是隐藏的，输入后，直接回车，安装就会往下进行；
+#### （3）在显示 Do you want to continue？ 时，输入y，并回车。
+### 3.升级 pip 及 apt-get
+#### （1）升级pip，输入指令
+```
+sudo pip install --upgrade pip
+```
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic1/3.PNG)
+#### （2）升级apt-get，输入指令
+```
+sudo apt-get update
+```
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic1/4.PNG)
+ 
+### 4.安装Tensorflow
+#### 输入指令 
+```
+sudo pip install tensorflow
+```
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic1/5.PNG)
+#### 同样需要输入一次密码，在显示：
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic1/6.PNG)
+#### 表示安装完成了~
 
-#### （2）同样在Anaconda Prompt中利用Anaconda创建一个python3.5的环境，环境名称为tensorflow ，输入下面命令：
+### 5.测试Tensorflow是否安装成功
+#### （1）打开终端，输入指令
 ```
-conda create -n tensorflow python=3.5
+python
 ```
- ![image](https://github.com/lucia-ly/test2/blob/master/pic/3.png)
- ```
- activate tensorflow #打开环境
- deactivate tensorflow #关闭环境
- ```
-
-打开Anaconda Navigator，点击左侧的Environments，可以看到tensorflow的环境已经创建好了。
-
- ![image](https://github.com/lucia-ly/test2/blob/master/pic/4.PNG)
-
-#### （4）安装cpu版本的TensorFlow
-```
-pip install --upgrade --ignore-installed tensorflow
-```
-#### （5）测试tensorflow 
-在Anaconda Prompt中启动tensorflow环境，并进入python环境。 
-测试代码：
+#### （2）输入以下指令，进行测试
 ```python
-import tensorflow as tf 
-hello = tf.constant('Hello, TensorFlow!') 
-sess = tf.Session() 
-print(sess.run(hello))
+import tensorflow as tf
+a=tf.constant([1.0,2.0,3.0],shape=[3],name='a')
+b=tf.constant([1.0,2.0,3.0],shape=[3],name='b')
+c=a+b
+sess=tf.Session(config=tf.ConfigProto(log_device_placement=True))
+print sess.run(c)
 ```
-运行结果：
-
- ![image](https://github.com/lucia-ly/test2/blob/master/pic/5.png)
+运行结果为：
+ ![image](https://github.com/lucia-ly/test2/blob/master/pic1/7.PNG)
 
 恭喜~安装成功喽！
 
 #### P.S.
-有大神说不建议通过装anaconda来装tensorflow，但通过anaconda来安装基本不会遇到太麻烦难以解决的问题，对于初学者也不失为一种可行的方法，笔者水平有限，如果有问题，欢迎指正~
+在安装TensorFlow时，很可能会遇到报错，有说是网络问题的，也有别的说法，究竟是什么问题导致的，现在还没办法给出确切的答案（大概是玄学吧），如果遇到这种问题，那就多装几次~
+把pip和apt-get都更新了，亲测是解决报错行之有效的方法，笔者水平有限，如果有问题，欢迎指正~
