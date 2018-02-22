@@ -16,8 +16,8 @@ python
 sudo apt-get install python-pip python-dev 
 ```
  ![image](https://github.com/lucia-ly/test2/blob/master/pic1/2.PNG)
-#### （2）root模式会让输入密码，密码是隐藏的，输入后，直接回车，安装就会往下进行；
-#### （3）在显示 Do you want to continue？ 时，输入y，并回车。
+#### （2）root模式会让输入密码，密码是隐藏的，输入后，直接回车，安装就会往下进行
+#### （3）在显示 Do you want to continue？ 时，输入y，并回车
 ### 3.升级 pip 及 apt-get
 #### （1）升级pip，输入指令
 ```
@@ -61,4 +61,5 @@ print sess.run(c)
 
 #### P.S.
 在安装TensorFlow时，很可能会遇到报错，有说是网络问题的，也有别的说法，究竟是什么问题导致的，现在还没办法给出确切的答案（大概是玄学吧），如果遇到这种问题，那就多装几次~
+
 把pip和apt-get都更新了，亲测是解决报错行之有效的方法，笔者水平有限，如果有问题，欢迎指正~
