@@ -31,11 +31,11 @@ conda create -n tensorflow python=3.5
 
  ![image](https://github.com/lucia-ly/test2/blob/master/pic/4.PNG)
 
-#### （4）安装cpu版本的TensorFlow
+#### （3）安装cpu版本的TensorFlow
 ```
 pip install --upgrade --ignore-installed tensorflow
 ```
-#### （5）测试tensorflow 
+#### （4）测试tensorflow 
 在Anaconda Prompt中启动tensorflow环境，并进入python环境。 
 测试代码：
 ```python
